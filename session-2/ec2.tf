@@ -1,13 +1,15 @@
-#Every single Terraform Confirgutration has a format called .tf
+#Every single Terraform Configuration has a format called .tf
 
 resource "aws_instance" "first_ec2" {
-  ami           = "ami-0be2609ba883822ec"
+  ami           = "ami-098e42ae54c764c35"
   instance_type = "t2.micro"
   tags = {
     Name        = "first"
     Environment = "dev"
   }
 }
+
+
 
 # Block: 2 types
 # 1. resource block - create and manage resources
@@ -18,6 +20,18 @@ resource "aws_instance" "first_ec2" {
 # Key has to  be unique, values can be repeated
 #  ami (argument name)          = "ami-0be2609ba883822ec" (argument value)
 # Argument - confirgurations or properties of your resource
+
+# Working directory is a place where you run terraform commands
+# Terraform has a plugin based architecture
+# plugins = features
+
+# terraform.tfstate = backend
+# There are only 2 types of Backend
+# - Local Backend - is within the working directory
+# - Remote Backend - is in the Storage 
+# contains all information about your infrastructure, only apply creates this file
+# Terraform always compares your configuration files with Terraform.tfstate 
+
 
 #Nice to have:
 # 1. Use _ instead of -
