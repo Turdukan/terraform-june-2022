@@ -11,7 +11,7 @@ variable "ingress_ports" {
 variable "lb_ingress_ports" {
   type        = list(string)
   description = "This is a list of ports for ingress rule"
-  default     = [ "80", "443"]
+  default     = ["80", "443"]
 }
 
 variable "key_name" {
@@ -25,32 +25,32 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 variable "public_subnet1" {
-  type = string
+  type        = string
   description = "This is public subnet 1"
-  default = "subnet-0942f893198db9cd8"
+  default     = "subnet-0942f893198db9cd8"
 }
 variable "public_subnet2" {
-  type = string
+  type        = string
   description = "This is public subnet 2"
-  default = "subnet-0702d71e5965a35a1"
+  default     = "subnet-0702d71e5965a35a1"
 }
 variable "vpc_id" {
-  type = string
+  type        = string
   description = "This is vpc id"
-  default = "vpc-0120746166a08bfd5"
+  default     = "vpc-0120746166a08bfd5"
 }
-variable "availability_zones" {
-  type = list (string)
+variable "availability_zone" {
+  type        = string
   description = "This is availability zone"
-  default = ["us-west-2b","us-west-2d" ]
+  default     = "us-west-2b"
 }
 variable "ec2_sizes" {
-  type = list (string)
+  type        = list(string)
   description = "These are max, min sizes and desired capacity for ec2"
-  default = ["3","5","3" ]
+  default     = ["3", "5", "3"]
 }
 variable "cidr_blocks" {
-  type = string
+  type        = string
   description = "This is cidr block for sg"
-  default = "0.0.0.0/0"
+  default     = "0.0.0.0/0"
 }

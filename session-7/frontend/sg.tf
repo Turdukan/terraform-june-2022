@@ -1,10 +1,10 @@
 resource "aws_security_group" "lb_sg" { # terraform resource name
   name        = "${var.env}-lb-sg"
   description = "This is a sg for my lb"
-  vpc_id = var.vpc_id
+  vpc_id      = var.vpc_id
   tags = {
-    Name = "lb-sg"
-    Environment = var.env
+    Name        = "lb-sg"
+    Environment = "dev"
   }
 }
 
@@ -33,9 +33,9 @@ resource "aws_security_group_rule" "lb_egress_rule" {
 resource "aws_security_group" "main" { # terraform resource name
   name        = "${var.env}-ec2-sg"
   description = "This is a sg for my EC2 "
-  vpc_id = var.vpc_id
+  vpc_id      = var.vpc_id
   tags = {
-    Name = "ec2-sg"
+    Name        = "ec2-sg"
     Environment = var.env
   }
 }

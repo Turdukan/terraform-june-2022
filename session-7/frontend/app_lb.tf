@@ -4,11 +4,11 @@ resource "aws_lb" "hw_lb" {
   load_balancer_type = "application"
   ip_address_type    = "ipv4"
   security_groups    = [aws_security_group.lb_sg.id]
-  subnets = [ var.public_subnet1, var.public_subnet2]
+  subnets            = [var.public_subnet1, var.public_subnet2]
   tags = {
-    Name = "app-lb"
+    Name        = "asg"
     Environment = var.env
-  }
+    }
 }
 
 resource "aws_alb_listener" "listeners" {

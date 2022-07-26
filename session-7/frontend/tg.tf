@@ -8,7 +8,7 @@ resource "aws_lb_target_group" "hw_tg" {
     port = 80
   }
   tags = {
-    Name = "tg"
+    Name        = "tg"
     Environment = var.env
   }
 }
